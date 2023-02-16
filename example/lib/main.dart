@@ -39,7 +39,6 @@ class _HomePageState extends State<HomePage> {
   final privateKey =
       "-----BEGIN RSA PRIVATE KEY-----##########-----END RSA PRIVATE KEY-----\n";
 
-
   final ImagePicker _picker = ImagePicker();
 
   Future getMediaFromGallery({required String mediaType}) async {
@@ -49,7 +48,6 @@ class _HomePageState extends State<HomePage> {
     } else {
       image = await _picker.pickVideo(source: ImageSource.gallery);
     }
-    print(image?.path);
     return image;
   }
 
@@ -63,7 +61,7 @@ class _HomePageState extends State<HomePage> {
     };
     await mediaUpload(
       apiKey: apiKey,
-      content_type: 'application/json',
+      contentType: 'application/json',
       body: bodyPost,
     ).then((value) => log(value));
   }
@@ -163,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                         ElevatedButton(
                           onPressed: () async {
                             await getMediaFromGallery(mediaType: 'image').then(
-                                  (value) {
+                              (value) {
                                 // log(value.path);
                                 imageUploadToAyrshare(fileBody: value);
                               },
@@ -369,6 +367,7 @@ class _HomePageState extends State<HomePage> {
                         Container(
                           width: double.maxFinite,
                           height: 40,
+                          alignment: Alignment.center,
                           child: const Text(
                             'Ayrshare Business Plan Only',
                             style: TextStyle(
@@ -376,7 +375,6 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          alignment: Alignment.center,
                         ),
                         ElevatedButton(
                           onPressed: () async {

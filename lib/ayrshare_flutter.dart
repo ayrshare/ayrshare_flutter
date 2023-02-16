@@ -36,7 +36,7 @@ Future<String> delete({required String apiKey, required Map body}) async {
 
 Future<String> history({required String apiKey, required Map body}) async {
   Map<String, dynamic>? bodyMap = body.cast<String, dynamic>();
-  var url = await Uri.https('app.ayrshare.com', '/api/history', bodyMap);
+  var url = Uri.https('app.ayrshare.com', '/api/history', bodyMap);
   var response = await http.get(
     url,
     headers: {
@@ -48,7 +48,7 @@ Future<String> history({required String apiKey, required Map body}) async {
 }
 
 Future<String> historyId({required String apiKey, required String id}) async {
-  var url = await Uri.https('app.ayrshare.com', '/api/history/$id');
+  var url = Uri.https('app.ayrshare.com', '/api/history/$id');
   var response = await http.get(
     url,
     headers: {
@@ -65,7 +65,7 @@ Future<String> historyPlatform(
       required Map body}) async {
   Map<String, dynamic>? bodyMap = body.cast<String, dynamic>();
   var url =
-  await Uri.https('app.ayrshare.com', '/api/history/$platform', bodyMap);
+  Uri.https('app.ayrshare.com', '/api/history/$platform', bodyMap);
   var response = await http.get(
     url,
     headers: {
@@ -78,14 +78,14 @@ Future<String> historyPlatform(
 
 Future<String> mediaUpload(
     {required String apiKey,
-      required String content_type,
+      required String contentType,
       required Map body}) async {
   var url = Uri.https(baseUrl, '/api/media/upload');
   var response = await http.post(
     url,
     headers: {
       'Authorization': 'Bearer $apiKey',
-      'Content-type': content_type,
+      'Content-type': contentType,
     },
     body: json.encode(preProcess(body)),
   );
@@ -96,7 +96,7 @@ Future<String> mediaUploadUrl(
     {required String apiKey, required Map body}) async {
   Map<String, dynamic>? bodyMap = body.cast<String, dynamic>();
   var url =
-  await Uri.https('app.ayrshare.com', '/api/media/uploadUrl', bodyMap);
+  Uri.https('app.ayrshare.com', '/api/media/uploadUrl', bodyMap);
   var response = await http.get(
     url,
     headers: {
@@ -107,7 +107,7 @@ Future<String> mediaUploadUrl(
 }
 
 Future<String> media({required String apiKey}) async {
-  var url = await Uri.https('app.ayrshare.com', '/api/media');
+  var url = Uri.https('app.ayrshare.com', '/api/media');
   var response = await http.get(
     url,
     headers: {
@@ -119,7 +119,7 @@ Future<String> media({required String apiKey}) async {
 
 Future<String> user({required String apiKey, required Map body}) async {
   Map<String, dynamic>? bodyMap = body.cast<String, dynamic>();
-  var url = await Uri.https('app.ayrshare.com', '/api/user', bodyMap);
+  var url = Uri.https('app.ayrshare.com', '/api/user', bodyMap);
   var response = await http.get(
     url,
     headers: {
@@ -147,7 +147,7 @@ Future<String> analyticsLinks(
     {required String apiKey, required Map body}) async {
   Map<String, dynamic>? bodyMap = body.cast<String, dynamic>();
   var url =
-  await Uri.https('app.ayrshare.com', '/api/analytics/links', bodyMap);
+  Uri.https('app.ayrshare.com', '/api/analytics/links', bodyMap);
   var response = await http.get(
     url,
     headers: {
@@ -185,7 +185,7 @@ Future<String> postComment({required String apiKey, required Map body}) async {
 }
 
 Future<String> getComments({required String apiKey, required Map body}) async {
-  var url = await Uri.https('app.ayrshare.com', '/api/comments/${body['id']}');
+  var url = Uri.https('app.ayrshare.com', '/api/comments/${body['id']}');
   var response = await http.get(
     url,
     headers: {
@@ -224,7 +224,7 @@ Future<String> deleteAutoSchedule(
 }
 
 Future<String> listAutoSchedule({required String apiKey}) async {
-  var url = await Uri.https('app.ayrshare.com', '/api/auto-schedule/list');
+  var url = Uri.https('app.ayrshare.com', '/api/auto-schedule/list');
   var response = await http.get(
     url,
     headers: {
@@ -248,7 +248,7 @@ Future<String> addFeed({required String apiKey, required Map body}) async {
 }
 
 Future<String> getFeeds({required String apiKey}) async {
-  var url = await Uri.https('app.ayrshare.com', '/api/feed');
+  var url = Uri.https('app.ayrshare.com', '/api/feed');
   var response = await http.get(
     url,
     headers: {
@@ -317,7 +317,7 @@ Future<String> updateProfile(
 
 Future<String> getProfiles({required String apiKey, required Map body}) async {
   Map<String, dynamic>? bodyMap = body.cast<String, dynamic>();
-  var url = await Uri.https('app.ayrshare.com', '/api/profiles', bodyMap);
+  var url = Uri.https('app.ayrshare.com', '/api/profiles', bodyMap);
   var response = await http.get(
     url,
     headers: {
@@ -382,7 +382,7 @@ Future<String> unregisterWebhook(
 }
 
 Future<String> getWebhooks({required String apiKey}) async {
-  var url = await Uri.https('app.ayrshare.com', '/api/hook/webhook');
+  var url = Uri.https('app.ayrshare.com', '/api/hook/webhook');
   var response = await http.get(
     url,
     headers: {
