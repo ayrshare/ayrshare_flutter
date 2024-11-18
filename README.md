@@ -35,7 +35,7 @@ No need for your own developer accounts at any social media networks.
 ## Get Started
 
 1. Get started with a [free plan or paid plan](https://www.ayrshare.com/pricing), or if you have a platform or manage multiple users check out the [Business Plan](https://www.ayrshare.com/business-plan-for-multiple-users/).
-2. Log in to your Ayrshare account, link some social networks, get your API key, and start posting.
+2. Log in to your Ayrshare account, link some social networks, get your API key, and [start posting](https://www.ayrshare.com/docs).
 
 ## Usage Example of Posting
 This sample app creates a button which calls the post function. It posts a random quote and a random image to the linked Twitter and Facebook accounts. It prints the response which includes the URLs for the live posts on the social networks.
